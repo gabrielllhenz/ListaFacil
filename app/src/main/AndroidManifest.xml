@@ -13,6 +13,21 @@
         android:theme="@style/Theme.ListaFacil"
         tools:targetApi="31">
         <activity
+            android:name=".HistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SelectListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
