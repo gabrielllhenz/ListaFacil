@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="primary_red">#8B2825</color>
+    <color name="primary_dark">#6B1A18</color>
+    <color name="accent_gold">#F4C430</color>
+    <color name="white">#FFFFFF</color>
+    <color name="text_white">#FFFEF5</color>
+    <color name="background_card">#A13430</color>
+    <color name="price_green">#4CAF50</color>
+    <color name="black">#000000</color>
+    <color name="overlay">#80000000</color>
 </resources>

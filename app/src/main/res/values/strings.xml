@@ -1,3 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Lista Facil</string>
+    <string name="app_name">ListaFácil</string>
+    <string name="welcome">BEM-VINDO\nAO LISTA FÁCIL</string>
+    <string name="select_option">Selecione a opção abaixo:</string>
+    <string name="add_list">Adicionar Lista</string>
+    <string name="select_list">Selecionar Lista</string>
+    <string name="history">Histórico</string>
+    <string name="save">SALVAR</string>
+    <string name="back">VOLTAR</string>
+    <string name="finalize">FINALIZAR</string>
+    <string name="title_list">Título da Lista:</string>
+    <string name="date">Data:</string>
+    <string name="add_items">+ Adicionar Itens</string>
+    <string name="description">Descrição:</string>
+    <string name="quantity">Quantidade:</string>
+    <string name="unit">Unidade:</string>
+    <string name="category">Categoria:</string>
+    <string name="kg">Kg</string>
+    <string name="grocery">Mercearia</string>
+    <string name="bakery">Padaria</string>
+    <string name="total">TOTAL:</string>
+    <string name="last_purchase">Última compra</string>
+    <string name="created">Criado</string>
 </resources>
