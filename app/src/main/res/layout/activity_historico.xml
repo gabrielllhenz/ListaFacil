@@ -219,8 +219,8 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnBack"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnVoltar"
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:text="@string/back"

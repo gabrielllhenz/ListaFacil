@@ -132,8 +132,8 @@
             android:background="@drawable/bg_edit_text"
             android:layout_marginTop="8dp" />
 
-        <Button
-            android:id="@+id/btnSave"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSalvar"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:text="@string/save"
