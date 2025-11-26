@@ -23,7 +23,7 @@
             android:textColor="@color/text_white" />
 
         <EditText
-            android:id="@+id/etDescription"
+            android:id="@+id/etDescricao"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/bg_edit_text"
@@ -60,7 +60,7 @@
                     android:layout_marginTop="8dp">
 
                     <ImageView
-                        android:id="@+id/ivMinus"
+                        android:id="@+id/ivMenos"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:src="@drawable/ic_minus_circle"
@@ -68,20 +68,21 @@
                         android:contentDescription="Diminuir" />
 
                     <EditText
-                        android:id="@+id/etQuantity"
+                        android:id="@+id/etQuantidade"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
                         android:layout_weight="1"
                         android:background="@drawable/bg_edit_text"
+                        android:editable="false"
                         android:gravity="center"
                         android:inputType="number"
                         android:text="1"
-                        android:textColor="@color/black"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp" />
+                        android:textColor="@color/black" />
 
                     <ImageView
-                        android:id="@+id/ivPlus"
+                        android:id="@+id/ivMais"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:src="@drawable/ic_plus_circle"
@@ -107,7 +108,7 @@
                     android:textColor="@color/text_white" />
 
                 <Spinner
-                    android:id="@+id/spinnerUnit"
+                    android:id="@+id/spUnidade"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:background="@drawable/bg_edit_text"
@@ -126,14 +127,14 @@
             android:layout_marginTop="16dp" />
 
         <Spinner
-            android:id="@+id/spinnerCategory"
+            android:id="@+id/spCategoria"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/bg_edit_text"
             android:layout_marginTop="8dp" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnSalvar"
+            android:id="@+id/btnSalvarDialog"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:text="@string/save"
