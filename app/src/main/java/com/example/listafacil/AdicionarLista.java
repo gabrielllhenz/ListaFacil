@@ -3,6 +3,7 @@ package com.example.listafacil;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -33,6 +34,8 @@ public class AdicionarLista extends AppCompatActivity {
     private RecyclerView rvItems;
     private ImageView ivCart;
     private EditText etDate;
+    private long listaId = -1;
+
 
 
     @Override
@@ -40,6 +43,7 @@ public class AdicionarLista extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_adicionar_lista);
+
 
         //find view by id
         salvar = findViewById(R.id.btnSalvar);
@@ -83,6 +87,30 @@ public class AdicionarLista extends AppCompatActivity {
         });
 
 
+
+        Intent intent = getIntent();
+        if (intent != null && intent.hasExtra("listaId")) {
+            listaId = intent.getIntExtra("listaId", -1);
+
+            String titulo = intent.getStringExtra("titulo");
+            String data = intent.getStringExtra("data");
+            ArrayList<ItemLista> itensRecebidos = (ArrayList<ItemLista>) intent.getSerializableExtra("itens");
+
+            if (titulo != null)
+                ((TextView) findViewById(R.id.etListTitle)).setText(titulo);
+
+            if (data != null)
+                ((TextView) findViewById(R.id.etDate)).setText(data);
+
+            if (itensRecebidos != null) {
+                itens.clear();
+                itens.addAll(itensRecebidos);
+                adapter.notifyDataSetChanged();
+            }
+        }
+
+
+
     }//oncreate
 
     private void salvarLista(){
@@ -102,15 +130,22 @@ public class AdicionarLista extends AppCompatActivity {
             return;
         }
 
-        // Salvar no banco a lista (crie tabela para listas).
-        // Exemplo: insira em "listas" (titulo, data)
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues valoresLista = new ContentValues();
         valoresLista.put("titulo", titulo);
         valoresLista.put("data", data);
-        long listaId = db.insert("listas", null, valoresLista);
 
-        // Salvar cada item vinculando pelo id da lista
+        if (listaId == -1) {
+            // Inserir nova lista
+            listaId = db.insert("listas", null, valoresLista);
+        } else {
+            // Atualizar lista existente
+            db.update("listas", valoresLista, "id = ?", new String[]{String.valueOf(listaId)});
+            // Remover itens antigos para atualização
+            db.delete("itens", "lista_id = ?", new String[]{String.valueOf(listaId)});
+        }
+
+        // Inserir todos os itens novamente vinculando a lista
         for (ItemLista item : itens) {
             ContentValues valores = new ContentValues();
             valores.put("lista_id", listaId);
@@ -123,8 +158,8 @@ public class AdicionarLista extends AppCompatActivity {
 
         Toast.makeText(this, "Lista salva com sucesso!", Toast.LENGTH_SHORT).show();
         finish();
-
     }
+
 
     private void abrirAdicionarItem() {
         abrirAdicionarItem(null, -1);

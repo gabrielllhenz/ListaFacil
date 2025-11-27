@@ -12,30 +12,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ListaFacil"
         tools:targetApi="31">
+
         <activity
             android:name=".Historico"
             android:exported="false" />
+
         <activity
             android:name=".ListaSelecionada"
             android:exported="false" />
+
         <activity
             android:name=".MenuListas"
             android:exported="false" />
+
         <activity
             android:name=".AdicionarLista"
             android:exported="false" />
-        <activity
-            android:name=".SplashActivity"
-            android:exported="false" />
+
         <activity
             android:name=".Home"
+            android:exported="false" />
+
+        <!-- Activity inicial -->
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
     </application>
 
 </manifest>

@@ -1,6 +1,8 @@
 package com.example.listafacil;
 
-public class ItemLista {
+import java.io.Serializable;
+
+public class ItemLista implements Serializable {
     public String nome;
     public String categoria;
     public String unidade;
