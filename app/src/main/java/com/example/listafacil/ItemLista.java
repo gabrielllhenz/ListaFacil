@@ -7,11 +7,15 @@ public class ItemLista implements Serializable {
     public String categoria;
     public String unidade;
     public int quantidade;
+    public boolean comprado;
+    public double preco;
 
     public ItemLista(String nome, String categoria, String unidade, int quantidade) {
         this.nome = nome;
         this.categoria = categoria;
         this.unidade = unidade;
         this.quantidade = quantidade;
+        this.comprado = false;
+        this.preco = 0.0;
     }
 }

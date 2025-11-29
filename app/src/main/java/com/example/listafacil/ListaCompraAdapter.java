@@ -38,6 +38,15 @@ public class ListaCompraAdapter extends RecyclerView.Adapter<ListaCompraAdapter.
         holder.tvListName.setText(lista.titulo);
         holder.tvCreatedDate.setText("Criado " + lista.data);
 
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, ListaSelecionada.class);
+            intent.putExtra("listaId", lista.id);
+            intent.putExtra("titulo", lista.titulo);
+            intent.putExtra("data", lista.data);
+            intent.putExtra("itens", new ArrayList<>(lista.itens));
+            context.startActivity(intent);
+        });
+
         holder.ivDropdown.setOnClickListener(v -> {
             if (holder.llExpandedItems.getVisibility() == View.GONE) {
                 holder.llExpandedItems.setVisibility(View.VISIBLE);
@@ -63,7 +72,7 @@ public class ListaCompraAdapter extends RecyclerView.Adapter<ListaCompraAdapter.
 
         holder.ivEdit.setOnClickListener(v -> {
             Intent intent = new Intent(context, AdicionarLista.class);
-            intent.putExtra("listaId", lista.id);
+            intent.putExtra("listaId", (long) lista.id);
             intent.putExtra("titulo", lista.titulo);
             intent.putExtra("data", lista.data);
             intent.putExtra("itens", new ArrayList<>(lista.itens)); // ItemLista deve implementar Serializable

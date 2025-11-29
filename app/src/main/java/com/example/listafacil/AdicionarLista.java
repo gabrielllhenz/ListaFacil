@@ -65,6 +65,9 @@ public class AdicionarLista extends AppCompatActivity {
         salvar.setOnClickListener(view -> salvarLista());
         addItem.setOnClickListener(view -> abrirAdicionarItem());
         ivCart.setOnClickListener(view -> finish());
+        ImageView ivBack = findViewById(R.id.ivBack);
+        ivBack.setOnClickListener(v -> finish());
+
 
         //banco de dados
         dbHelper = new MeuBancoHelper(this);

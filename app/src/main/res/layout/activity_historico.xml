@@ -4,233 +4,116 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary_red"
-    android:padding="24dp">
+    android:background="@color/primary_red">
 
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="HISTÓRICO"
-        android:textSize="24sp"
-        android:textColor="@color/accent_gold"
-        android:fontFamily="sans-serif-medium"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/ivCart"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@drawable/ic_cart"
-        app:tint="@color/accent_gold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="@string/app_name" />
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardPurchase"
+    <!-- Header Fixo -->
+    <LinearLayout
+        android:id="@+id/llHeader"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/background_card"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+        <!-- Barra superior -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="24dp">
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_arrow_back"
+                app:tint="@color/accent_gold"
+                android:contentDescription="Voltar" />
 
             <TextView
-                android:id="@+id/tvPurchaseName"
-                android:layout_width="wrap_content"
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Churrasco"
-                android:textSize="22sp"
-                android:textColor="@color/text_white"
+                android:layout_weight="1"
+                android:layout_marginStart="16dp"
+                android:text="HISTÓRICO"
+                android:textSize="24sp"
+                android:textColor="@color/accent_gold"
                 android:fontFamily="sans-serif-medium" />
 
-            <TextView
-                android:id="@+id/tvPurchaseDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Última compra 03/11/25"
-                android:textSize="14sp"
-                android:textColor="@color/text_white"
-                android:layout_marginTop="4dp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/text_white"
-                android:alpha="0.3"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="8dp">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="• Arroz"
-                        android:textSize="16sp"
-                        android:textColor="@color/text_white" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="R$ 8,99"
-                        android:textSize="16sp"
-                        android:textColor="@color/text_white" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="8dp">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="• Cerveja"
-                        android:textSize="16sp"
-                        android:textColor="@color/text_white" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="R$ 8,99"
-                        android:textSize="16sp"
-                        android:textColor="@color/text_white" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="16dp">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="• Pão de Alho"
-                        android:textSize="16sp"
-                        android:textColor="@color/text_white" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="R$ 19,89"
-                        android:textSize="16sp"
-                        android:textColor="@color/text_white" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/text_white"
-                android:alpha="0.3"
-                android:layout_marginBottom="16dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/total"
-                    android:textSize="20sp"
-                    android:textColor="@color/text_white"
-                    android:fontFamily="sans-serif-medium" />
-
-                <TextView
-                    android:id="@+id/tvTotal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="R$ 36,97"
-                    android:textSize="20sp"
-                    android:textColor="@color/text_white"
-                    android:fontFamily="sans-serif-medium" />
-
-            </LinearLayout>
-
+            <ImageView
+                android:id="@+id/ivCart"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_cart"
+                app:tint="@color/accent_gold"
+                android:contentDescription="Carrinho" />
         </LinearLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+        <!-- Seletor de Mês/Ano -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="24dp">
 
-    <LinearLayout
-        android:id="@+id/llPagination"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/cardPurchase"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+            <ImageView
+                android:id="@+id/ivPrevMonth"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_chevron_left"
+                app:tint="@color/accent_gold"
+                android:contentDescription="Mês anterior" />
 
-        <View
-            android:layout_width="12dp"
-            android:layout_height="12dp"
-            android:background="@drawable/bg_dot_selected"
-            android:layout_marginEnd="8dp" />
+            <TextView
+                android:id="@+id/tvMonthYear"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Novembro 2025"
+                android:textSize="18sp"
+                android:textColor="@color/text_white"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center" />
 
-        <View
-            android:layout_width="12dp"
-            android:layout_height="12dp"
-            android:background="@drawable/bg_dot_unselected"
-            android:layout_marginEnd="8dp" />
-
-        <View
-            android:layout_width="12dp"
-            android:layout_height="12dp"
-            android:background="@drawable/bg_dot_unselected"
-            android:layout_marginEnd="8dp" />
-
-        <View
-            android:layout_width="12dp"
-            android:layout_height="12dp"
-            android:background="@drawable/bg_dot_unselected" />
+            <ImageView
+                android:id="@+id/ivNextMonth"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_chevron_right"
+                app:tint="@color/accent_gold"
+                android:contentDescription="Próximo mês" />
+        </LinearLayout>
 
     </LinearLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnVoltar"
+    <!-- ViewPager2 para carrossel -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpHistorico"
         android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:text="@string/back"
-        android:textColor="@color/black"
-        android:background="@drawable/bg_button"
-        android:layout_marginBottom="16dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/llHeader"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="48dp"
-        android:layout_marginEnd="48dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Mensagem quando não há histórico -->
+    <TextView
+        android:id="@+id/tvNoHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nenhuma compra neste período"
+        android:textSize="16sp"
+        android:textColor="@color/text_white"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/vpHistorico"
+        app:layout_constraintBottom_toBottomOf="@id/vpHistorico"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

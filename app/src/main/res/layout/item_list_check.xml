@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@color/background_card"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+            <!-- CHECKBOX -->
+            <CheckBox
+                android:id="@+id/cbComprado"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="22dp"
+                android:buttonTint="@color/text_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- NOME -->
+            <TextView
+                android:id="@+id/tvItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Cerveja"
+                android:textColor="@color/text_white"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/cbComprado"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- CATEGORIA -->
+            <TextView
+                android:id="@+id/tvCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="• Bebidas•"
+                android:textColor="@color/text_white"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvItemName"
+                app:layout_constraintStart_toEndOf="@id/tvItemName" />
+
+            <!-- CONTROLE QUANTIDADE -->
+            <LinearLayout
+                android:id="@+id/llQuantityControl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvItemName">
+
+                <ImageView
+                    android:id="@+id/ivMinus"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_minus_circle"
+                    app:tint="@color/text_white" />
+
+                <TextView
+                    android:id="@+id/tvQuantity"
+                    android:layout_width="48dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/text_white"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/ivPlus"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_plus_circle"
+                    app:tint="@color/text_white" />
+
+                <TextView
+                    android:id="@+id/tvUnit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Lata"
+                    android:textColor="@color/text_white"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- PREÇO -->
+            <EditText
+                android:id="@+id/etPreco"
+                android:layout_width="72dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="22dp"
+                android:background="@drawable/bg_edit_text"
+                android:hint="R$"
+                android:inputType="numberDecimal"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                app:layout_constraintBottom_toBottomOf="@id/llQuantityControl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
